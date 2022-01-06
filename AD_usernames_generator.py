@@ -139,6 +139,7 @@ def firstLetterMutations(name):
         addSymbols(firstLetterLastName, middleName, firstName)
         addSymbols(lastName, middleName, firstLetterFirstName)
         addSymbols(firstName, middleName, firstLetterLastName)
+        addSymbols(firstLetterFirstName, middleName, firstLetterLastName)
 
 
 def joinFirstLastName(name):
