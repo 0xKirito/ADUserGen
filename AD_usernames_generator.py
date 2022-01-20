@@ -104,9 +104,21 @@ def nameToString(name):
     return namestring
 
 def addSymbols(string1, string2, string3):
+    
+    if string2 == None:
+        # return only first name and last name without symbols (john doe)
+        finalNames.append(string1) # john
+        finalNames.append(string3) # doe
+        
+        if (len(string1) >=3) and (len(string3) >= 3):
+            finalNames.append(string1[0:3] + string3[0:3])
+            finalNames.append(string3[0:3] + string1[0:3])
+
+    # return first name and last name combinations with symbols
     symbols = ["", ".", "-", "_"]
     for i in range(len(symbols)):
         if string2 == None:
+            # return first name and last name with symbols
             finalNames.append(string1 + symbols[i] + string3)
             finalNames.append(string3 + symbols[i] + string1)
         else:
